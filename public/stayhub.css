@@ -275,6 +275,14 @@ select {
   line-height: 0.9;
 }
 
+.plain-hyphen {
+  display: inline-block;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 500;
+  transform: scaleX(0.7);
+  transform-origin: center;
+}
+
 .hero p,
 .section-title p {
   max-width: 660px;
@@ -301,9 +309,7 @@ select {
   min-height: 440px;
   overflow: hidden;
   border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(15, 43, 35, 0.86), rgba(29, 26, 21, 0.36)),
-    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80") center/cover;
+  background: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80") center/cover;
   box-shadow: var(--shadow);
 }
 
@@ -925,131 +931,82 @@ select {
 }
 
 .site-footer {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 12% 10%, rgba(178, 138, 69, 0.24), transparent 28%),
-    linear-gradient(135deg, var(--green-2), #120907);
+  background: #24140f;
   color: #fff8ea;
   margin-top: 42px;
-  padding: 58px 0 22px;
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -35%;
-  width: 35%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #f7e8bf, var(--gold), transparent);
-  animation: footerSheen 4.8s ease-in-out infinite;
-}
-
-.site-footer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255, 248, 234, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 248, 234, 0.04) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  padding: 42px 0 20px;
 }
 
 .footer-shell {
-  position: relative;
-  z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 0.9fr);
+  gap: 36px;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
 }
 
 .footer-brand-panel {
-  border: 1px solid rgba(247, 232, 191, 0.18);
-  border-radius: 28px;
-  background: rgba(255, 250, 241, 0.08);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.22);
-  padding: clamp(24px, 4vw, 42px);
-  backdrop-filter: blur(12px);
+  max-width: 460px;
 }
 
 .footer-brand-panel h2 {
-  max-width: 680px;
-  margin: 12px 0;
+  margin: 0 0 12px;
   color: #fff8ea;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(2.2rem, 5vw, 4.4rem);
-  line-height: 0.95;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.2;
 }
 
 .footer-brand-panel p {
-  max-width: 560px;
   color: rgba(255, 248, 234, 0.72);
-  font-weight: 700;
-  line-height: 1.7;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .footer-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(180px, 1fr));
-  gap: 16px;
+  gap: 28px;
 }
 
 .footer-links div {
-  border: 1px solid rgba(247, 232, 191, 0.14);
-  border-radius: 22px;
-  background: rgba(255, 250, 241, 0.06);
-  padding: 20px;
+  min-width: 0;
 }
 
 .footer-links h3 {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: #f7e8bf;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.35rem;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
 }
 
 .footer-links a,
 .footer-links span {
   display: block;
   color: rgba(255, 248, 234, 0.72);
-  font-weight: 800;
-  margin-top: 10px;
-  transition: color 180ms ease, transform 180ms ease;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-top: 9px;
+  transition: color 180ms ease;
 }
 
 .footer-links a:hover {
   color: #fff8ea;
-  transform: translateX(5px);
 }
 
 .footer-bottom {
-  position: relative;
-  z-index: 1;
   display: flex;
   width: min(1180px, calc(100% - 32px));
   justify-content: space-between;
   gap: 18px;
-  margin: 34px auto 0;
+  margin: 32px auto 0;
   border-top: 1px solid rgba(247, 232, 191, 0.14);
   color: rgba(255, 248, 234, 0.58);
   font-size: 0.88rem;
-  font-weight: 800;
-  padding-top: 18px;
-}
-
-@keyframes footerSheen {
-  0% {
-    left: -35%;
-  }
-  55%,
-  100% {
-    left: 100%;
-  }
+  font-weight: 600;
+  padding-top: 16px;
 }
 
 @keyframes headerLine {

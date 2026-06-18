@@ -13,10 +13,10 @@ app.use((req,res,next)=>{
   next();
 })
 
+app.use(express.static(path.join(__dirname,'public')))
 
 app.use(userRouter)
 app.use("/host",hostRouter);
-app.use(express.static(path.join(__dirname,'public')))
 const {PageNotFound}=require('./controller/errors')
 const {MongoConnect} = require('./utils/databaseUtil')
 app.use(PageNotFound)
